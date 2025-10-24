@@ -20,6 +20,7 @@
             --light-bg: #161b22;
             --text-color: #e6edf3;
             --muted-text: #8b949e;
+            --border-radius: 20px;
         }
 
         * {
@@ -83,7 +84,7 @@
 
         .hero {
             background: var(--dark-bg);
-            padding: 120px 0 80px;
+            padding: 100px 0 60px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -104,18 +105,19 @@
         .profile-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin: 0 auto 30px;
             border: 2px solid var(--primary-color);
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             padding: 10px;
             box-shadow: 0 0 30px rgba(88, 166, 255, 0.3);
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), rgba(88, 166, 255, 0.1));
+            max-width: 320px;
         }
 
         .profile-img {
             width: 100%;
-            max-width: 300px;
             height: auto;
-            max-height: 400px;
+            max-height: 450px;
             object-fit: contain;
             border-radius: 10px;
             transition: all 0.5s ease;
@@ -275,12 +277,11 @@
 
         @media (max-width: 992px) {
             .hero {
-                padding: 100px 0 60px;
+                padding: 80px 0 50px;
             }
 
             .profile-img {
-                max-width: 280px;
-                max-height: 380px;
+                max-height: 400px;
             }
 
             .hero h1 {
@@ -298,17 +299,16 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 80px 0 50px;
+                padding: 60px 0 40px;
             }
 
             .profile-container {
                 max-width: 90%;
-                margin: 0 auto 30px;
+                border-radius: 15px;
             }
 
             .profile-img {
-                max-width: 100%;
-                height: auto;
+                max-height: 350px;
             }
 
             .hero h1 {
@@ -324,20 +324,18 @@
                 margin: 10px auto;
                 width: 80%;
                 text-align: center;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                border-radius: 25px;
+                padding: 12px 20px;
             }
         }
 
         @media (max-width: 576px) {
             .hero {
-                padding: 60px 0 40px;
+                padding: 50px 0 30px;
             }
 
             .profile-img {
-                max-width: 100%;
+                max-height: 300px;
             }
 
             .hero h1 {
