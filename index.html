@@ -242,6 +242,22 @@
             border-radius: 20px;
             font-size: 0.9rem;
         }
+        /* تحسينات جديدة */
+        .horizontal-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-right: 0 !important;
+            margin-top: 10px;
+        }
+        .horizontal-list li {
+            margin-bottom: 0;
+            flex: 1 1 200px;
+            background-color: rgba(88, 166, 255, 0.05);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 2px solid var(--primary-color);
+        }
         @media (max-width: 992px) {
             .hero {
                 padding: 100px 0 30px;
@@ -276,20 +292,6 @@
                 width: 85%;
                 padding: 10px 20px;
             }
-            /* تعديلات navbar للشاشات الصغيرة */
-            .navbar-collapse {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0 15px;
-            }
-            .navbar-nav {
-                flex-direction: row;
-                gap: 10px;
-            }
-            .navbar-toggler {
-                margin-right: 10px;
-            }
         }
         @media (max-width: 576px) {
             .hero {
@@ -322,7 +324,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse flex-row" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -377,7 +379,7 @@
             <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <strong>Zone Trading Company — Egypt</strong><br>
                 <em>OCI Infrastructure Engineer</em> (Present)<br>
-                <ul style="padding-right: 20px; margin-top: 10px;">
+                <ul class="list-unstyled horizontal-list">
                     <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Provisioning and managing OCI resources (Compute, Storage, Networking, Security).</li>
                     <li data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Designing and securing Virtual Cloud Networks (VCNs), subnets, route tables, Security Lists, and NSGs.</li>
                     <li data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">Deploying and configuring OCI Load Balancers with health checks for high availability.</li>
@@ -393,7 +395,7 @@
             <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <strong>RALY (IT) — Egypt</strong><br>
                 <em>IT & Database Administration Intern</em> (Nov 2024 – Apr 2025)<br>
-                <ul style="padding-right: 20px; margin-top: 10px;">
+                <ul class="list-unstyled horizontal-list">
                     <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Completed CompTIA ITF+, A+, N+, Security+, and Linux+ courses.</li>
                     <li data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Gained hands-on experience with SQL, PL/SQL, and Oracle DBA fundamentals.</li>
                     <li data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">Assisted in basic database administration tasks including installation, user management, and backup concepts.</li>
@@ -408,7 +410,7 @@
             <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <strong>Bitaqati – Zone</strong><br>
                 Part of the OCI Infrastructure team for a corporate project.
-                <ul style="padding-right: 20px; margin-top: 10px;">
+                <ul class="list-unstyled horizontal-list">
                     <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Created and structured Compartments to logically organize and isolate cloud resources.</li>
                     <li data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Designed and implemented the Virtual Cloud Network (VCN) architecture as the foundation of the environment.</li>
                     <li data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">Configured public and private subnets with proper routing and access control.</li>
@@ -420,7 +422,7 @@
             <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                 <strong>AI-Based HR Management System</strong><br>
                 Graduation project developing an AI-driven HR platform for employers and job seekers.
-                <ul style="padding-right: 20px; margin-top: 10px;">
+                <ul class="list-unstyled horizontal-list">
                     <li data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Developed a system to streamline recruitment for job seekers, employers, and HR professionals.</li>
                     <li data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Implemented AI-driven features for candidate matching and account management.</li>
                 </ul>
@@ -529,12 +531,6 @@
             duration: 1000,
             easing: 'ease-in-out',
             delay: 100,
-        });
-        // عرض القائمة تلقائيًا في الموبيل
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.innerWidth <= 768) {
-                document.querySelector('.navbar-collapse').classList.add('show');
-            }
         });
     </script>
 </body>
