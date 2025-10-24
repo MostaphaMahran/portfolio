@@ -20,7 +20,7 @@
             --light-bg: #161b22;
             --text-color: #e6edf3;
             --muted-text: #8b949e;
-            --border-radius: 15px;
+            --border-radius: 10px;
             --border-glow: 0 0 15px var(--primary-color);
         }
 
@@ -117,7 +117,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: calc(var(--border-radius) - 5px);
             transition: all 0.5s ease;
         }
 
@@ -300,8 +300,9 @@
             }
 
             .profile-container {
-                width: 250px;
+                width: 95%;
                 height: 320px;
+                max-width: 250px;
             }
 
             .hero h1 {
@@ -326,7 +327,7 @@
             .profile-container {
                 width: 95%;
                 height: 280px;
-                max-width: 250px;
+                max-width: 220px;
             }
 
             .hero h1 {
