@@ -21,6 +21,7 @@
             --text-color: #e6edf3;
             --muted-text: #8b949e;
             --border-radius: 15px;
+            --border-glow: 0 0 15px var(--primary-color);
         }
 
         * {
@@ -84,32 +85,30 @@
 
         .hero {
             background: var(--dark-bg);
-            padding: 60px 0 40px;
+            padding: 100px 0 50px;
             text-align: center;
             position: relative;
-            overflow: hidden;
             width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .hero-content {
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(88, 166, 255, 0.1) 0%, transparent 70%);
-            z-index: -1;
+            max-width: 600px;
+            padding: 20px;
         }
 
         .profile-container {
             position: relative;
             display: inline-block;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             border: 2px solid var(--primary-color);
             border-radius: var(--border-radius);
             padding: 5px;
-            box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+            box-shadow: var(--border-glow);
             background: linear-gradient(135deg, rgba(88, 166, 255, 0.05), rgba(88, 166, 255, 0.1));
             max-width: 100%;
             width: 300px;
@@ -281,7 +280,7 @@
 
         @media (max-width: 992px) {
             .hero {
-                padding: 50px 0 30px;
+                padding: 80px 0 40px;
             }
 
             .profile-container {
@@ -300,7 +299,8 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 40px 0 20px;
+                padding: 60px 0 30px;
+                min-height: auto;
             }
 
             .profile-container {
@@ -324,7 +324,7 @@
 
         @media (max-width: 576px) {
             .hero {
-                padding: 30px 0 10px;
+                padding: 40px 0 20px;
             }
 
             .profile-container {
@@ -371,8 +371,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" data-aos="fade-up" data-aos-duration="1000">
-        <div class="container">
+    <section class="hero">
+        <div class="hero-content">
             <div class="profile-container" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
                 <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed Sayed" class="profile-img">
             </div>
