@@ -276,6 +276,20 @@
                 width: 85%;
                 padding: 10px 20px;
             }
+            /* تعديلات navbar للشاشات الصغيرة */
+            .navbar-collapse {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 15px;
+            }
+            .navbar-nav {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .navbar-toggler {
+                margin-right: 10px;
+            }
         }
         @media (max-width: 576px) {
             .hero {
@@ -293,11 +307,6 @@
                 font-size: 1rem;
             }
         }
-        @media (min-width: 992px) {
-            .navbar-toggler {
-                display: none !important;
-            }
-        }
         html {
             scroll-behavior: smooth;
         }
@@ -313,7 +322,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse flex-row" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
@@ -520,6 +529,12 @@
             duration: 1000,
             easing: 'ease-in-out',
             delay: 100,
+        });
+        // عرض القائمة تلقائيًا في الموبيل
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.navbar-collapse').classList.add('show');
+            }
         });
     </script>
 </body>
