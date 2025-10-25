@@ -20,6 +20,8 @@
             --muted-text: #94a3b8;
             --border-radius: 12px;
             --transition: all 0.3s ease;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
         }
 
         * {
@@ -42,8 +44,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1rem 2rem;
-            background-color: rgba(15, 23, 42, 0.9);
+            padding: 1rem;
+            background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             display: flex;
@@ -57,24 +59,22 @@
             align-items: center;
             gap: 0.75rem;
             font-weight: 600;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--text-color);
         }
 
         .logo-icon {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .menu-toggle {
             background: none;
             border: none;
             color: var(--text-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            padding: 0.5rem;
         }
 
         /* Sidebar */
@@ -82,7 +82,8 @@
             position: fixed;
             top: 0;
             left: -100%;
-            width: 280px;
+            width: 80%;
+            max-width: 300px;
             height: 100vh;
             background-color: var(--light-bg);
             z-index: 1100;
@@ -97,12 +98,12 @@
 
         .sidebar-close {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1.2rem;
+            right: 1.2rem;
             background: none;
             border: none;
             color: var(--muted-text);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             cursor: pointer;
         }
 
@@ -112,18 +113,19 @@
         }
 
         .sidebar-item {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.8rem;
         }
 
         .sidebar-link {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 1rem;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
             color: var(--muted-text);
             text-decoration: none;
-            border-radius: var(--border-radius);
+            border-radius: 8px;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .sidebar-link:hover,
@@ -143,7 +145,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             z-index: 1050;
             opacity: 0;
             visibility: hidden;
@@ -159,40 +161,35 @@
         .main {
             margin-left: 0;
             transition: var(--transition);
-        }
-
-        .main.shift {
-            margin-left: 280px;
+            padding-top: 60px;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 0 2rem;
+            padding: 2rem;
             text-align: center;
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
-
         .profile-img-container {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 1.5rem;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.3);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
 
         .profile-img-container:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: var(--hover-shadow);
         }
 
         .profile-img {
@@ -202,9 +199,9 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
             -webkit-background-clip: text;
             background-clip: text;
@@ -212,17 +209,16 @@
         }
 
         .hero h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 500;
             color: var(--muted-text);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1.5rem;
         }
 
         .social-link {
@@ -245,27 +241,27 @@
 
         /* Sections */
         .section {
-            padding: 5rem 2rem;
+            padding: 3rem 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
-            display: inline-block;
+            padding-bottom: 0.5rem;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
             border-radius: 3px;
@@ -274,54 +270,34 @@
         .section-card {
             background-color: var(--light-bg);
             border-radius: var(--border-radius);
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
             border: 1px solid rgba(77, 95, 207, 0.2);
             transition: var(--transition);
         }
 
         .section-card:hover {
-            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
-            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-3px);
         }
 
         /* About Section */
         .about-text {
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.8;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Education Section */
-        .education-item {
-            margin-bottom: 2rem;
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .education-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-
-        .education-subtitle {
-            color: var(--muted-text);
-            font-style: italic;
+            text-align: justify;
         }
 
         /* Experience Section */
+        .experience-container {
+            margin-top: 1.5rem;
+        }
+
         .experience-item {
             margin-bottom: 2rem;
             border-left: 3px solid var(--primary-color);
-            padding-left: 1.5rem;
+            padding-left: 1.2rem;
             position: relative;
         }
 
@@ -332,22 +308,25 @@
             margin-bottom: 1rem;
         }
 
-        .experience-title {
-            font-size: 1.25rem;
+        .experience-info h3 {
+            font-size: 1.2rem;
             font-weight: 600;
+            margin-bottom: 0.3rem;
         }
 
-        .experience-subtitle {
+        .experience-company {
             color: var(--muted-text);
             font-style: italic;
+            font-size: 0.95rem;
         }
 
         .experience-duration {
             background-color: rgba(67, 97, 238, 0.1);
-            padding: 0.25rem 0.75rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--primary-color);
+            margin-top: 0.3rem;
         }
 
         .experience-responsibilities {
@@ -356,80 +335,51 @@
 
         .responsibility-item {
             display: flex;
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .responsibility-item::before {
             content: '•';
             color: var(--primary-color);
             font-weight: bold;
-            margin-right: 0.75rem;
-            margin-top: 0.125rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--light-bg);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-description {
-            color: var(--muted-text);
-            margin-bottom: 1rem;
+            margin-right: 0.7rem;
+            margin-top: 0.1rem;
         }
 
         /* Certifications Section */
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .certification-card {
             background-color: var(--light-bg);
+            border: 1px solid rgba(77, 95, 207, 0.2);
             border-radius: var(--border-radius);
             padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .certification-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
+            transform: translateY(-3px);
+            box-shadow: var(--hover-shadow);
         }
 
         .certification-title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .certification-link {
@@ -439,8 +389,9 @@
             color: white;
             text-decoration: none;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             transition: var(--transition);
+            margin-top: auto;
         }
 
         .certification-link:hover {
@@ -452,15 +403,15 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
         }
 
         .skill-item {
             background-color: rgba(77, 95, 207, 0.1);
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
         }
 
@@ -472,20 +423,19 @@
         /* Contact Section */
         .contact-content {
             text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .contact-btn {
             display: inline-block;
             margin: 1rem 0.5rem;
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.5rem;
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
 
         .contact-btn:hover {
@@ -496,28 +446,47 @@
         /* Footer */
         .footer {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background-color: var(--light-bg);
             color: var(--muted-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .sidebar {
+                width: 280px;
+            }
+
+            .main.shift {
+                margin-left: 280px;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero h2 {
-                font-size: 1.25rem;
+                font-size: 1.4rem;
             }
 
             .section {
-                padding: 3rem 1rem;
+                padding: 4rem 2rem;
             }
 
             .section-title {
-                font-size: 1.75rem;
+                font-size: 2rem;
+            }
+
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section {
+                padding: 5rem 2rem;
             }
         }
     </style>
@@ -548,12 +517,6 @@
                 <a href="#experience" class="sidebar-link">
                     <i class="fas fa-briefcase"></i>
                     <span>Experience</span>
-                </a>
-            </li>
-            <li class="sidebar-item">
-                <a href="#projects" class="sidebar-link">
-                    <i class="fas fa-project-diagram"></i>
-                    <span>Projects</span>
                 </a>
             </li>
             <li class="sidebar-item">
@@ -592,20 +555,18 @@
     <main class="main" id="main">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
-                <div class="profile-img-container">
-                    <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed" class="profile-img">
-                </div>
-                <h1>Sayed Mohamed</h1>
-                <h2>OCI Infrastructure Engineer</h2>
-                <div class="social-links">
-                    <a href="mailto:sayedmohamedmahran@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/sayed404/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
+            <div class="profile-img-container">
+                <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed" class="profile-img">
+            </div>
+            <h1>Sayed Mohamed</h1>
+            <h2>OCI Infrastructure Engineer</h2>
+            <div class="social-links">
+                <a href="mailto:sayedmohamedmahran@gmail.com" class="social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sayed404/" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
         </section>
 
@@ -614,9 +575,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="section-card">
                 <p class="about-text">
-                    Oracle Cloud Infrastructure Engineer with hands-on experience in deploying and managing cloud resources.
-                    Passionate about building secure and scalable cloud solutions with a focus on best practices and innovation.
-                    Strong problem-solving skills and ability to work effectively in team environments.
+                    Oracle Cloud Infrastructure Engineer with hands-on experience in deploying and managing cloud resources across networking, compute, storage, and security domains. Passionate about building secure and scalable cloud solutions with a focus on best practices and innovation. Strong problem-solving skills and ability to work effectively in team environments.
                 </p>
             </div>
         </section>
@@ -625,13 +584,13 @@
         <section id="education" class="section">
             <h2 class="section-title">Education</h2>
             <div class="section-card">
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3 class="education-title">B.Sc. in Computers and Information</h3>
-                        <span class="education-duration">2020 - 2024</span>
+                <div class="experience-item">
+                    <div class="experience-info">
+                        <h3>B.Sc. in Computers and Information</h3>
+                        <p class="experience-company">Assiut University</p>
+                        <span class="experience-duration">2020 - 2024</span>
                     </div>
-                    <p class="education-subtitle">Assiut University</p>
-                    <p>Graduated with A+ in AI-Based Human Resource Management System project.</p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem;">Graduated with A+ in AI-Based Human Resource Management System project.</p>
                 </div>
             </div>
         </section>
@@ -639,71 +598,41 @@
         <!-- Experience Section -->
         <section id="experience" class="section">
             <h2 class="section-title">Professional Experience</h2>
-
             <div class="section-card">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">OCI Infrastructure Engineer</h3>
-                            <p class="experience-subtitle">Zone Trading Company — Egypt</p>
+                <div class="experience-container">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3>OCI Infrastructure Engineer</h3>
+                                <p class="experience-company">Zone Trading Company — Egypt</p>
+                            </div>
+                            <span class="experience-duration">Present</span>
                         </div>
-                        <span class="experience-duration">Present</span>
-                    </div>
-                    <div class="experience-responsibilities">
-                        <div class="responsibility-item">Provisioning and managing OCI resources (Compute, Storage, Networking, Security)</div>
-                        <div class="responsibility-item">Designing and securing Virtual Cloud Networks (VCNs), subnets, route tables</div>
-                        <div class="responsibility-item">Deploying and configuring OCI Load Balancers with health checks for high availability</div>
-                        <div class="responsibility-item">Implementing secure access with OCI Bastion and IAM policies</div>
-                        <div class="responsibility-item">Enhancing security posture using Cloud Guard, Security Zones, and Web Application Firewall</div>
-                        <div class="responsibility-item">Monitoring cost and usage through OCI Billing & Cost Management</div>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">IT & Database Administration Intern</h3>
-                            <p class="experience-subtitle">RALY (IT) — Egypt</p>
-                        </div>
-                        <span class="experience-duration">Nov 2024 – Apr 2025</span>
-                    </div>
-                    <div class="experience-responsibilities">
-                        <div class="responsibility-item">Completed CompTIA ITF+, A+, N+, Security+, and Linux+ courses</div>
-                        <div class="responsibility-item">Assisted in database administration tasks including installation and backup concepts</div>
-                        <div class="responsibility-item">Gained hands-on experience with SQL, PL/SQL, and Oracle DBA fundamentals</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2 class="section-title">Key Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">Bitaqati — Zone</h3>
-                        <p class="project-description">
-                            Part of the OCI Infrastructure team for a corporate project, responsible for:
-                        </p>
                         <div class="experience-responsibilities">
-                            <div class="responsibility-item">Created and structured Compartments to organize cloud resources</div>
-                            <div class="responsibility-item">Designed VCN architecture as the foundation of the environment</div>
-                            <div class="responsibility-item">Configured public and private subnets with proper routing and access control</div>
-                            <div class="responsibility-item">Deployed Load Balancers in TEST environment for traffic distribution</div>
+                            <div class="responsibility-item">Provisioning and managing OCI resources (Compute, Storage, Networking, Security)</div>
+                            <div class="responsibility-item">Designing and securing Virtual Cloud Networks (VCNs), subnets, route tables, Security Lists, and NSGs</div>
+                            <div class="responsibility-item">Deploying and configuring OCI Load Balancers with health checks for high availability</div>
+                            <div class="responsibility-item">Implementing secure access with OCI Bastion and IAM policies</div>
+                            <div class="responsibility-item">Configuring OS Management Hub for patching, monitoring, and updates</div>
+                            <div class="responsibility-item">Enhancing security posture using Cloud Guard, Security Zones, and Web Application Firewall (WAF)</div>
+                            <div class="responsibility-item">Troubleshooting and analyzing network traffic with Network Path Analyzer and Network Visualizer</div>
+                            <div class="responsibility-item">Supporting hybrid connectivity with Site-to-Site VPN (IPsec)</div>
+                            <div class="responsibility-item">Monitoring cost and usage through OCI Billing & Cost Management</div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-content">
-                        <h3 class="project-title">AI-Based HR Management System</h3>
-                        <p class="project-description">
-                            Graduation project developing an AI-driven HR platform with:
-                        </p>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3>IT & Database Administration Intern</h3>
+                                <p class="experience-company">RALY (IT) — Egypt</p>
+                            </div>
+                            <span class="experience-duration">Nov 2024 – Apr 2025</span>
+                        </div>
                         <div class="experience-responsibilities">
-                            <div class="responsibility-item">Streamlined recruitment process for job seekers and employers</div>
-                            <div class="responsibility-item">Implemented AI-driven features for candidate matching and account management</div>
+                            <div class="responsibility-item">Completed CompTIA ITF+, A+, N+, Security+, and Linux+ courses</div>
+                            <div class="responsibility-item">Gained hands-on experience with SQL, PL/SQL, and Oracle DBA fundamentals</div>
+                            <div class="responsibility-item">Assisted in basic database administration tasks including installation, user management, and backup concepts</div>
                         </div>
                     </div>
                 </div>
@@ -723,20 +652,44 @@
                     <a href="https://drive.google.com/file/d/1T5BcpY9g1CUC0aZs7roct0IZYwhGRm5I/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+                    <h3 class="certification-title">Oracle Data Platform 2025 Foundations Associate</h3>
                     <a href="https://drive.google.com/file/d/1-7WSCWQpfcK708lsq7MlRifymE2uYqiW/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+                    <a href="https://drive.google.com/file/d/18S33uOh0eNI-pAyQr7eg6ZDSS3hJQsnv/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Foundations Associate</h3>
+                    <a href="https://drive.google.com/file/d/1cB6_9C0Q6UlFccuMUDD0lDeOKVJEHUtB/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">CompTIA ITF+</h3>
+                    <a href="https://drive.google.com/file/d/1buPqaPmUKUfG0O34ouVn8pGyin1zx8zl/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">CompTIA A+</h3>
+                    <a href="https://drive.google.com/file/d/1ypdtbdvAV3gb6c13hVhKNqSKjHnZAtR1/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">CompTIA Network+</h3>
+                    <a href="https://drive.google.com/file/d/13fdSQIQjdlSg3g4lC_K1ogYlzImDrLmY/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
                 </div>
                 <div class="certification-card">
                     <h3 class="certification-title">CompTIA Security+</h3>
                     <a href="https://drive.google.com/file/d/11N14NCVvEvP5mgkJSLeBq-gw3rx1LUsb/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
                 </div>
                 <div class="certification-card">
+                    <h3 class="certification-title">Cisco Cybersecurity</h3>
+                    <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                </div>
+                <div class="certification-card">
                     <h3 class="certification-title">CCNA</h3>
                     <a href="https://drive.google.com/file/d/1SydMgXHYGtwe0WXZzNsQiLmfnI9-PzIj/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Cisco Cybersecurity</h3>
-                    <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <h3 class="certification-title">SQL</h3>
+                    <a href="https://drive.google.com/file/d/19NhyM4dePAXX7x-CeaQ9rrSYSz8XEX6r/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
                 </div>
             </div>
         </section>
@@ -759,6 +712,10 @@
                     <div class="skill-item">Troubleshooting</div>
                     <div class="skill-item">Teamwork</div>
                     <div class="skill-item">Problem Solving</div>
+                    <div class="skill-item">OCI Storage</div>
+                    <div class="skill-item">Virtualization</div>
+                    <div class="skill-item">Firewalls</div>
+                    <div class="skill-item">IDS/IPS</div>
                 </div>
             </div>
         </section>
@@ -773,7 +730,7 @@
                         <i class="fas fa-envelope"></i> Email Me
                     </a>
                     <a href="https://www.linkedin.com/in/sayed404/" class="contact-btn" target="_blank">
-                        <i class="fab fa-linkedin-in"></i> LinkedIn
+                        <i class="fab fa-linkedin-in"></i> LinkedIn Profile
                     </a>
                 </div>
             </div>
@@ -787,54 +744,59 @@
 
     <!-- JavaScript -->
     <script>
-        // Toggle sidebar
+        // Toggle sidebar and overlay
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
         const sidebarClose = document.getElementById('sidebarClose');
         const main = document.getElementById('main');
-
-        menuToggle.addEventListener('click', () => {
-            sidebar.classList.add('active');
-            overlay.classList.add('active');
-            main.classList.add('shift');
-        });
-
-        sidebarClose.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-            main.classList.remove('shift');
-        });
-
-        overlay.addEventListener('click', () => {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-            main.classList.remove('shift');
-        });
-
-        // Update active link in sidebar
         const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            main.classList.toggle('shift');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleSidebar);
+        sidebarClose.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when clicking on a link (for mobile)
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    toggleSidebar();
+                }
+            });
+        });
+
+        // Update active link in sidebar based on scroll position
         const sections = document.querySelectorAll('.section');
 
-        window.addEventListener('scroll', () => {
-            let current = '';
+        function updateActiveLink() {
+            let currentSection = '';
 
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
+                const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.clientHeight;
 
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
                 }
             });
 
             sidebarLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href') === `#${currentSection}`) {
                     link.classList.add('active');
                 }
             });
-        });
+        }
+
+        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('resize', updateActiveLink);
 
         // Smooth scrolling for sidebar links
         sidebarLinks.forEach(link => {
@@ -843,16 +805,25 @@
                 const targetId = link.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
 
-                sidebar.classList.remove('active');
-                overlay.classList.remove('active');
-                main.classList.remove('shift');
-
                 window.scrollTo({
-                    top: targetSection.offsetTop - 80,
+                    top: targetSection.offsetTop - 60,
                     behavior: 'smooth'
                 });
             });
         });
+
+        // Initialize active link on page load
+        document.addEventListener('DOMContentLoaded', updateActiveLink);
+
+        // AOS initialization for animations
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-in-out',
+            delay: 100,
+        });
     </script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
