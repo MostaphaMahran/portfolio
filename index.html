@@ -89,7 +89,7 @@
         #backToTop:hover {
             background: var(--primary-hover);
             opacity: 1;
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.1);
         }
         /* Navbar */
         .navbar {
@@ -345,6 +345,13 @@
             position: relative;
             padding-bottom: 0.5rem;
             color: var(--text-color);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section-title::after {
             content: '';
@@ -369,6 +376,12 @@
             margin-bottom: 1.5rem;
             border: 1px solid rgba(77, 95, 207, 0.2);
             transition: transform 0.5s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .section-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section-card:hover {
             transform: translateY(-10px) rotateX(5deg);
@@ -401,8 +414,6 @@
             opacity: 1;
             transform: translateX(0);
         }
-        .experience-item:nth-child(1) { animation-delay: 0.3s; }
-        .experience-item:nth-child(2) { animation-delay: 0.6s; }
         .experience-header {
             display: flex;
             justify-content: space-between;
@@ -461,6 +472,12 @@
             perspective: 1000px;
             transform-style: preserve-3d;
             position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .certification-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .certification-card:hover {
             transform: rotateY(15deg) scale(1.05);
@@ -527,16 +544,11 @@
             transition: var(--transition);
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.5s ease forwards;
         }
-        .skill-item:nth-child(1) { animation-delay: 0.1s; }
-        .skill-item:nth-child(2) { animation-delay: 0.2s; }
-        .skill-item:nth-child(3) { animation-delay: 0.3s; }
-        .skill-item:nth-child(4) { animation-delay: 0.4s; }
-        .skill-item:nth-child(5) { animation-delay: 0.5s; }
-        .skill-item:nth-child(6) { animation-delay: 0.6s; }
-        .skill-item:nth-child(7) { animation-delay: 0.7s; }
-        .skill-item:nth-child(8) { animation-delay: 0.8s; }
+        .skill-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .skill-item:hover {
             background-color: rgba(67, 97, 238, 0.2);
             transform: translateY(-2px);
@@ -696,14 +708,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const body = document.querySelector('body');
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 50; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 star.style.top = `${Math.random() * 100}%`;
                 star.style.left = `${Math.random() * 100}%`;
                 star.style.width = `${Math.random() * 2 + 1}px`;
                 star.style.height = star.style.width;
-                star.style.animationDelay = `${Math.random() * 2}s`;
+                star.style.animationDelay = `${Math.random() * 4}s`;
                 body.appendChild(star);
             }
         });
@@ -1077,16 +1089,19 @@
                 }
             }, 30);
         });
-        // Animate experience items on scroll
-        const experienceItems = document.querySelectorAll('.experience-item');
-        const experienceObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        experienceItems.forEach(item => experienceObserver.observe(item));
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.section-title, .section-card, .experience-item, .certification-card, .skill-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(element => observer.observe(element));
+        };
+        animateOnScroll();
         // Initialize AOS for animations
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({
