@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sayed Mohamed - OCI Infrastructure Engineer with expertise in cloud solutions, networking, and security.">
     <meta name="keywords" content="OCI, Cloud Engineer, Oracle Cloud, Networking, Security, Sayed Mohamed">
+    <meta property="og:title" content="Sayed Mohamed | OCI Infrastructure Engineer">
+    <meta property="og:description" content="Oracle Cloud Infrastructure Engineer with expertise in cloud solutions, networking, and security.">
+    <meta property="og:image" content="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
     <title>Sayed Mohamed | OCI Infrastructure Engineer</title>
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -15,6 +26,7 @@
     <style>
         :root {
             --primary-color: #4361ee;
+            --primary-hover: #3a56d4;
             --secondary-color: #3f37c9;
             --dark-bg: #0f172a;
             --light-bg: #1e293b;
@@ -22,8 +34,9 @@
             --muted-text: #94a3b8;
             --border-radius: 12px;
             --transition: all 0.3s ease;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --hover-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 20px rgba(0, 0, 0, 0.05);
+            --hover-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(67, 97, 238, 0.15);
+            --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         * {
             margin: 0;
@@ -56,10 +69,12 @@
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            opacity: 0.8;
         }
         #backToTop:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
+            background: var(--primary-hover);
+            opacity: 1;
+            transform: translateY(-5px);
         }
         /* Navbar */
         .navbar {
@@ -181,7 +196,7 @@
             justify-content: center;
             padding: 2rem;
             text-align: center;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         }
         .profile-img-container {
             width: 180px;
@@ -376,6 +391,10 @@
         .certification-back {
             background-color: rgba(67, 97, 238, 0.2);
             transform: rotateY(180deg);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         .certification-title {
             font-size: 0.95rem;
@@ -395,15 +414,24 @@
             margin-top: auto;
         }
         .certification-link:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-hover);
         }
         /* Skills Section */
+        .skills-category {
+            margin-bottom: 1.5rem;
+        }
+        .skills-category h4 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-align: center;
+        }
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.8rem;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
         }
         .skill-item {
             background-color: rgba(77, 95, 207, 0.1);
@@ -433,7 +461,7 @@
             font-size: 0.9rem;
         }
         .contact-btn:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-hover);
             transform: translateY(-2px);
         }
         /* Footer */
@@ -481,14 +509,14 @@
 </head>
 <body>
     <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top">
+    <button id="backToTop" title="Go to top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-        <button class="sidebar-close" id="sidebarClose">
+        <button class="sidebar-close" id="sidebarClose" aria-label="Close sidebar">
             <i class="fas fa-times"></i>
         </button>
         <ul class="sidebar-list">
@@ -536,7 +564,7 @@
             <i class="fas fa-cloud logo-icon"></i>
             <span>Sayed Mohamed</span>
         </div>
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open sidebar">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
@@ -545,7 +573,13 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="profile-img-container">
-                <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed" class="profile-img" loading="lazy">
+                <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg"
+                     srcset="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5-480w.jpg 480w,
+                             WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5-800w.jpg 800w"
+                     sizes="(max-width: 600px) 480px, 800px"
+                     alt="Sayed Mohamed"
+                     class="profile-img"
+                     loading="lazy">
             </div>
             <h1>Sayed Mohamed</h1>
             <h2>OCI Infrastructure Engineer</h2>
@@ -630,109 +664,109 @@
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Networking Professional</h3>
-                        <a href="https://drive.google.com/file/d/1A-EuQgMsHSFqLLFKHQ7RV4YWtDQRtXiJ/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1A-EuQgMsHSFqLLFKHQ7RV4YWtDQRtXiJ/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View Oracle Cloud Infrastructure 2025 Networking Professional Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification validates expertise in OCI networking solutions.</p>
+                        <p>This certification validates expertise in OCI networking solutions, including VCN design, security, and load balancing.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Architect Associate</h3>
-                        <a href="https://drive.google.com/file/d/1T5BcpY9g1CUC0aZs7roct0IZYwhGRm5I/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1T5BcpY9g1CUC0aZs7roct0IZYwhGRm5I/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View Oracle Cloud Infrastructure 2025 Architect Associate Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification validates expertise in designing OCI architectures.</p>
+                        <p>This certification validates expertise in designing OCI architectures.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Oracle Data Platform 2025 Foundations Associate</h3>
-                        <a href="https://drive.google.com/file/d/1-7WSCWQpfcK708lsq7MlRifymE2uYqiW/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1-7WSCWQpfcK708lsq7MlRifymE2uYqiW/view?usp=sharing" class="certification-link" target="_blank" aria-label="View Oracle Data Platform 2025 Foundations Associate Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of Oracle Data Platform.</p>
+                        <p>This certification validates foundational knowledge of Oracle Data Platform.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-                        <a href="https://drive.google.com/file/d/18S33uOh0eNI-pAyQr7eg6ZDSS3hJQsnv/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/18S33uOh0eNI-pAyQr7eg6ZDSS3hJQsnv/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View Oracle Cloud Infrastructure 2025 AI Foundations Associate Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of AI on OCI.</p>
+                        <p>This certification validates foundational knowledge of AI on OCI.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Foundations Associate</h3>
-                        <a href="https://drive.google.com/file/d/1cB6_9C0Q6UlFccuMUDD0lDeOKVJEHUtB/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1cB6_9C0Q6UlFccuMUDD0lDeOKVJEHUtB/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View Oracle Cloud Infrastructure 2025 Foundations Associate Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of OCI.</p>
+                        <p>This certification validates foundational knowledge of OCI.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">CompTIA ITF+</h3>
-                        <a href="https://drive.google.com/file/d/1buPqaPmUKUfG0O34ouVn8pGyin1zx8zl/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1buPqaPmUKUfG0O34ouVn8pGyin1zx8zl/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View CompTIA ITF+ Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers essential IT skills and knowledge.</p>
+                        <p>This certification covers essential IT skills and knowledge.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">CompTIA A+</h3>
-                        <a href="https://drive.google.com/file/d/1ypdtbdvAV3gb6c13hVhKNqSKjHnZAtR1/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1ypdtbdvAV3gb6c13hVhKNqSKjHnZAtR1/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View CompTIA A+ Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers core hardware and software technologies.</p>
+                        <p>This certification covers core hardware and software technologies.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">CompTIA Network+</h3>
-                        <a href="https://drive.google.com/file/d/13fdSQIQjdlSg3g4lC_K1ogYlzImDrLmY/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/13fdSQIQjdlSg3g4lC_K1ogYlzImDrLmY/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View CompTIA Network+ Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers essential networking concepts.</p>
+                        <p>This certification covers essential networking concepts.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">CompTIA Security+</h3>
-                        <a href="https://drive.google.com/file/d/11N14NCVvEvP5mgkJSLeBq-gw3rx1LUsb/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/11N14NCVvEvP5mgkJSLeBq-gw3rx1LUsb/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View CompTIA Security+ Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers core security functions.</p>
+                        <p>This certification covers core security functions.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">Cisco Cybersecurity</h3>
-                        <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View Cisco Cybersecurity Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers cybersecurity operations and monitoring.</p>
+                        <p>This certification covers cybersecurity operations and monitoring.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">CCNA</h3>
-                        <a href="https://drive.google.com/file/d/1SydMgXHYGtwe0WXZzNsQiLmfnI9-PzIj/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/1SydMgXHYGtwe0WXZzNsQiLmfnI9-PzIj/view?usp=drive_link" class="certification-link" target="_blank" aria-label="View CCNA Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers networking fundamentals.</p>
+                        <p>This certification covers networking fundamentals.</p>
                     </div>
                 </div>
                 <div class="certification-card">
                     <div class="certification-front">
                         <h3 class="certification-title">SQL</h3>
-                        <a href="https://drive.google.com/file/d/19NhyM4dePAXX7x-CeaQ9rrSYSz8XEX6r/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                        <a href="https://drive.google.com/file/d/19NhyM4dePAXX7x-CeaQ9rrSYSz8XEX6r/view?usp=sharing" class="certification-link" target="_blank" aria-label="View SQL Certificate">View Certificate</a>
                     </div>
                     <div class="certification-back">
-                        <p style="font-size: 0.85rem;">This certification covers SQL database management.</p>
+                        <p>This certification covers SQL database management.</p>
                     </div>
                 </div>
             </div>
@@ -741,24 +775,47 @@
         <section id="skills" class="section">
             <h2 class="section-title">Skills</h2>
             <div class="section-card">
-                <div class="skills-container">
-                    <div class="skill-item">OCI Compute</div>
-                    <div class="skill-item">Networking</div>
-                    <div class="skill-item">Security</div>
-                    <div class="skill-item">Linux</div>
-                    <div class="skill-item">SQL</div>
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">Cloud Guard</div>
-                    <div class="skill-item">Load Balancers</div>
-                    <div class="skill-item">VCN Design</div>
-                    <div class="skill-item">IAM Policies</div>
-                    <div class="skill-item">Troubleshooting</div>
-                    <div class="skill-item">Teamwork</div>
-                    <div class="skill-item">Problem Solving</div>
-                    <div class="skill-item">OCI Storage</div>
-                    <div class="skill-item">Virtualization</div>
-                    <div class="skill-item">Firewalls</div>
-                    <div class="skill-item">IDS/IPS</div>
+                <div class="skills-category">
+                    <h4>Cloud</h4>
+                    <div class="skills-container">
+                        <div class="skill-item">OCI Compute</div>
+                        <div class="skill-item">OCI Storage</div>
+                        <div class="skill-item">Load Balancers</div>
+                        <div class="skill-item">VCN Design</div>
+                        <div class="skill-item">IAM Policies</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h4>Networking</h4>
+                    <div class="skills-container">
+                        <div class="skill-item">Networking</div>
+                        <div class="skill-item">Firewalls</div>
+                        <div class="skill-item">IDS/IPS</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h4>Security</h4>
+                    <div class="skills-container">
+                        <div class="skill-item">Security</div>
+                        <div class="skill-item">Cloud Guard</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h4>Programming & Tools</h4>
+                    <div class="skills-container">
+                        <div class="skill-item">Linux</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Virtualization</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h4>Soft Skills</h4>
+                    <div class="skills-container">
+                        <div class="skill-item">Troubleshooting</div>
+                        <div class="skill-item">Teamwork</div>
+                        <div class="skill-item">Problem Solving</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -768,10 +825,10 @@
             <div class="section-card">
                 <div class="contact-content">
                     <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                    <a href="mailto:sayedmohamedmahran@gmail.com" class="contact-btn">
+                    <a href="mailto:sayedmohamedmahran@gmail.com" class="contact-btn" aria-label="Email Sayed Mohamed">
                         <i class="fas fa-envelope"></i> Email Me
                     </a>
-                    <a href="https://www.linkedin.com/in/sayed404/" class="contact-btn" target="_blank">
+                    <a href="https://www.linkedin.com/in/sayed404/" class="contact-btn" target="_blank" aria-label="Visit Sayed Mohamed's LinkedIn Profile">
                         <i class="fab fa-linkedin-in"></i> LinkedIn Profile
                     </a>
                 </div>
@@ -812,30 +869,24 @@
             });
         });
 
-        // Update active link in sidebar based on scroll position
+        // Update active link in sidebar based on scroll position using Intersection Observer
         const sections = document.querySelectorAll('.section');
-
-        function updateActiveLink() {
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop) {
-                    currentSection = section.getAttribute('id');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    sidebarLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                    });
                 }
             });
+        }, { threshold: 0.5 });
 
-            sidebarLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
+        sections.forEach(section => observer.observe(section));
 
+        // Back to Top functionality
+        const backToTop = document.getElementById("backToTop");
         window.addEventListener('scroll', () => {
-            updateActiveLink();
-            const backToTop = document.getElementById("backToTop");
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 backToTop.style.display = "flex";
             } else {
@@ -843,7 +894,9 @@
             }
         });
 
-        window.addEventListener('resize', updateActiveLink);
+        backToTop.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
 
         // Smooth scrolling for sidebar links
         sidebarLinks.forEach(link => {
@@ -858,23 +911,17 @@
             });
         });
 
-        // Back to Top functionality
-        document.getElementById("backToTop").onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-
-        // Initialize active link on page load
-        document.addEventListener('DOMContentLoaded', updateActiveLink);
-
-        // AOS initialization for animations
-        AOS.init({
-            once: true,
-            duration: 800,
-            easing: 'ease-in-out',
-            delay: 100,
+        // Initialize AOS for animations
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                once: true,
+                duration: 800,
+                easing: 'ease-in-out',
+                delay: 100,
+            });
         });
     </script>
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 </body>
 </html>
