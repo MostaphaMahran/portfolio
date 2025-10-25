@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sayed Mohamed - OCI Infrastructure Engineer with expertise in cloud solutions, networking, and security.">
+    <meta name="keywords" content="OCI, Cloud Engineer, Oracle Cloud, Networking, Security, Sayed Mohamed">
     <title>Sayed Mohamed | OCI Infrastructure Engineer</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,13 +25,11 @@
             --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --hover-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark-bg);
@@ -37,7 +37,30 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        #backToTop:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
         /* Navbar */
         .navbar {
             position: fixed;
@@ -53,7 +76,6 @@
             align-items: center;
             border-bottom: 1px solid rgba(77, 95, 207, 0.2);
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -62,12 +84,10 @@
             font-size: 1.1rem;
             color: var(--text-color);
         }
-
         .logo-icon {
             color: var(--primary-color);
             font-size: 1.3rem;
         }
-
         .menu-toggle {
             background: none;
             border: none;
@@ -76,7 +96,6 @@
             cursor: pointer;
             padding: 0.5rem;
         }
-
         /* Sidebar */
         .sidebar {
             position: fixed;
@@ -91,11 +110,9 @@
             padding: 4rem 1.5rem 2rem;
             border-right: 1px solid rgba(77, 95, 207, 0.2);
         }
-
         .sidebar.active {
             left: 0;
         }
-
         .sidebar-close {
             position: absolute;
             top: 1.2rem;
@@ -106,16 +123,13 @@
             font-size: 1.3rem;
             cursor: pointer;
         }
-
         .sidebar-list {
             list-style: none;
             margin-top: 2rem;
         }
-
         .sidebar-item {
             margin-bottom: 0.8rem;
         }
-
         .sidebar-link {
             display: flex;
             align-items: center;
@@ -127,17 +141,14 @@
             transition: var(--transition);
             font-size: 0.95rem;
         }
-
         .sidebar-link:hover,
         .sidebar-link.active {
             background-color: rgba(67, 97, 238, 0.1);
             color: var(--primary-color);
         }
-
         .sidebar-link i {
             font-size: 1.1rem;
         }
-
         /* Overlay */
         .overlay {
             position: fixed;
@@ -151,19 +162,16 @@
             visibility: hidden;
             transition: var(--transition);
         }
-
         .overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         /* Main Content */
         .main {
             margin-left: 0;
             transition: var(--transition);
             padding-top: 60px;
         }
-
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -175,7 +183,6 @@
             text-align: center;
             background: linear-gradient(135deg, var(--dark-bg) 0%, var(--light-bg) 100%);
         }
-
         .profile-img-container {
             width: 180px;
             height: 180px;
@@ -186,18 +193,15 @@
             box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
-
         .profile-img-container:hover {
             transform: scale(1.03);
             box-shadow: var(--hover-shadow);
         }
-
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
         .hero h1 {
             font-size: 2rem;
             font-weight: 700;
@@ -207,20 +211,17 @@
             background-clip: text;
             color: transparent;
         }
-
         .hero h2 {
             font-size: 1.2rem;
             font-weight: 500;
             color: var(--muted-text);
             margin-bottom: 1.5rem;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 1rem;
         }
-
         .social-link {
             display: flex;
             align-items: center;
@@ -233,19 +234,16 @@
             text-decoration: none;
             transition: var(--transition);
         }
-
         .social-link:hover {
             background-color: var(--primary-color);
             transform: translateY(-3px);
         }
-
         /* Sections */
         .section {
             padding: 3rem 1.5rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -254,7 +252,6 @@
             position: relative;
             padding-bottom: 0.5rem;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -266,7 +263,6 @@
             background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
             border-radius: 3px;
         }
-
         .section-card {
             background-color: var(--light-bg);
             border-radius: var(--border-radius);
@@ -276,50 +272,42 @@
             border: 1px solid rgba(77, 95, 207, 0.2);
             transition: var(--transition);
         }
-
         .section-card:hover {
             box-shadow: var(--hover-shadow);
             transform: translateY(-3px);
         }
-
         /* About Section */
         .about-text {
             font-size: 1rem;
             line-height: 1.8;
             text-align: justify;
         }
-
         /* Experience Section */
         .experience-container {
             margin-top: 1.5rem;
         }
-
         .experience-item {
             margin-bottom: 2rem;
             border-left: 3px solid var(--primary-color);
             padding-left: 1.2rem;
             position: relative;
         }
-
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 1rem;
         }
-
         .experience-info h3 {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 0.3rem;
         }
-
         .experience-company {
             color: var(--muted-text);
             font-style: italic;
             font-size: 0.95rem;
         }
-
         .experience-duration {
             background-color: rgba(67, 97, 238, 0.1);
             padding: 0.3rem 0.8rem;
@@ -328,18 +316,15 @@
             color: var(--primary-color);
             margin-top: 0.3rem;
         }
-
         .experience-responsibilities {
             margin-top: 1rem;
         }
-
         .responsibility-item {
             display: flex;
             margin-bottom: 0.7rem;
             font-size: 0.9rem;
             line-height: 1.6;
         }
-
         .responsibility-item::before {
             content: '•';
             color: var(--primary-color);
@@ -347,7 +332,6 @@
             margin-right: 0.7rem;
             margin-top: 0.1rem;
         }
-
         /* Certifications Section */
         .certifications-grid {
             display: grid;
@@ -355,7 +339,6 @@
             gap: 1.2rem;
             margin-top: 1.5rem;
         }
-
         .certification-card {
             background-color: var(--light-bg);
             border: 1px solid rgba(77, 95, 207, 0.2);
@@ -368,20 +351,38 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
-
         .certification-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--hover-shadow);
+            transform: rotateY(180deg);
         }
-
+        .certification-front, .certification-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        .certification-front {
+            background-color: var(--light-bg);
+        }
+        .certification-back {
+            background-color: rgba(67, 97, 238, 0.2);
+            transform: rotateY(180deg);
+        }
         .certification-title {
             font-size: 0.95rem;
             font-weight: 500;
             margin-bottom: 1rem;
             line-height: 1.4;
         }
-
         .certification-link {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -393,11 +394,9 @@
             transition: var(--transition);
             margin-top: auto;
         }
-
         .certification-link:hover {
             background-color: var(--secondary-color);
         }
-
         /* Skills Section */
         .skills-container {
             display: flex;
@@ -406,7 +405,6 @@
             gap: 0.8rem;
             margin: 1.5rem 0;
         }
-
         .skill-item {
             background-color: rgba(77, 95, 207, 0.1);
             padding: 0.6rem 1.2rem;
@@ -414,17 +412,14 @@
             font-size: 0.85rem;
             transition: var(--transition);
         }
-
         .skill-item:hover {
             background-color: rgba(67, 97, 238, 0.2);
             transform: translateY(-2px);
         }
-
         /* Contact Section */
         .contact-content {
             text-align: center;
         }
-
         .contact-btn {
             display: inline-block;
             margin: 1rem 0.5rem;
@@ -437,12 +432,10 @@
             transition: var(--transition);
             font-size: 0.9rem;
         }
-
         .contact-btn:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
         }
-
         /* Footer */
         .footer {
             text-align: center;
@@ -451,50 +444,48 @@
             color: var(--muted-text);
             font-size: 0.85rem;
         }
-
         /* Responsive Design */
         @media (min-width: 768px) {
             .sidebar {
                 width: 280px;
             }
-
             .main.shift {
                 margin-left: 280px;
             }
-
             .hero h1 {
                 font-size: 2.5rem;
             }
-
             .hero h2 {
                 font-size: 1.4rem;
             }
-
             .section {
                 padding: 4rem 2rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
-
             .certifications-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
                 gap: 1.5rem;
             }
         }
-
-        @media (min-width: 1024px) {
-            .section {
-                padding: 5rem 2rem;
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 90%;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
-
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <button class="sidebar-close" id="sidebarClose">
@@ -539,7 +530,6 @@
             </li>
         </ul>
     </aside>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
@@ -550,13 +540,12 @@
             <i class="fas fa-bars"></i>
         </button>
     </nav>
-
     <!-- Main Content -->
     <main class="main" id="main">
         <!-- Hero Section -->
         <section class="hero">
             <div class="profile-img-container">
-                <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed" class="profile-img">
+                <img src="WhatsApp Image 2025-01-11 at 11.34.45_f4d8bfd5.jpg" alt="Sayed Mohamed" class="profile-img" loading="lazy">
             </div>
             <h1>Sayed Mohamed</h1>
             <h2>OCI Infrastructure Engineer</h2>
@@ -569,7 +558,6 @@
                 </a>
             </div>
         </section>
-
         <!-- About Section -->
         <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
@@ -579,7 +567,6 @@
                 </p>
             </div>
         </section>
-
         <!-- Education Section -->
         <section id="education" class="section">
             <h2 class="section-title">Education</h2>
@@ -594,7 +581,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Experience Section -->
         <section id="experience" class="section">
             <h2 class="section-title">Professional Experience</h2>
@@ -620,7 +606,6 @@
                             <div class="responsibility-item">Monitoring cost and usage through OCI Billing & Cost Management</div>
                         </div>
                     </div>
-
                     <div class="experience-item">
                         <div class="experience-header">
                             <div class="experience-info">
@@ -638,62 +623,120 @@
                 </div>
             </div>
         </section>
-
         <!-- Certifications Section -->
         <section id="certifications" class="section">
             <h2 class="section-title">Certifications</h2>
             <div class="certifications-grid">
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Networking Professional</h3>
-                    <a href="https://drive.google.com/file/d/1A-EuQgMsHSFqLLFKHQ7RV4YWtDQRtXiJ/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Networking Professional</h3>
+                        <a href="https://drive.google.com/file/d/1A-EuQgMsHSFqLLFKHQ7RV4YWtDQRtXiJ/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification validates expertise in OCI networking solutions.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Architect Associate</h3>
-                    <a href="https://drive.google.com/file/d/1T5BcpY9g1CUC0aZs7roct0IZYwhGRm5I/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Architect Associate</h3>
+                        <a href="https://drive.google.com/file/d/1T5BcpY9g1CUC0aZs7roct0IZYwhGRm5I/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification validates expertise in designing OCI architectures.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Data Platform 2025 Foundations Associate</h3>
-                    <a href="https://drive.google.com/file/d/1-7WSCWQpfcK708lsq7MlRifymE2uYqiW/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Oracle Data Platform 2025 Foundations Associate</h3>
+                        <a href="https://drive.google.com/file/d/1-7WSCWQpfcK708lsq7MlRifymE2uYqiW/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of Oracle Data Platform.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
-                    <a href="https://drive.google.com/file/d/18S33uOh0eNI-pAyQr7eg6ZDSS3hJQsnv/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Oracle Cloud Infrastructure 2025 AI Foundations Associate</h3>
+                        <a href="https://drive.google.com/file/d/18S33uOh0eNI-pAyQr7eg6ZDSS3hJQsnv/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of AI on OCI.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Foundations Associate</h3>
-                    <a href="https://drive.google.com/file/d/1cB6_9C0Q6UlFccuMUDD0lDeOKVJEHUtB/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Oracle Cloud Infrastructure 2025 Foundations Associate</h3>
+                        <a href="https://drive.google.com/file/d/1cB6_9C0Q6UlFccuMUDD0lDeOKVJEHUtB/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification validates foundational knowledge of OCI.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">CompTIA ITF+</h3>
-                    <a href="https://drive.google.com/file/d/1buPqaPmUKUfG0O34ouVn8pGyin1zx8zl/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">CompTIA ITF+</h3>
+                        <a href="https://drive.google.com/file/d/1buPqaPmUKUfG0O34ouVn8pGyin1zx8zl/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers essential IT skills and knowledge.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">CompTIA A+</h3>
-                    <a href="https://drive.google.com/file/d/1ypdtbdvAV3gb6c13hVhKNqSKjHnZAtR1/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">CompTIA A+</h3>
+                        <a href="https://drive.google.com/file/d/1ypdtbdvAV3gb6c13hVhKNqSKjHnZAtR1/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers core hardware and software technologies.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">CompTIA Network+</h3>
-                    <a href="https://drive.google.com/file/d/13fdSQIQjdlSg3g4lC_K1ogYlzImDrLmY/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">CompTIA Network+</h3>
+                        <a href="https://drive.google.com/file/d/13fdSQIQjdlSg3g4lC_K1ogYlzImDrLmY/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers essential networking concepts.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">CompTIA Security+</h3>
-                    <a href="https://drive.google.com/file/d/11N14NCVvEvP5mgkJSLeBq-gw3rx1LUsb/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">CompTIA Security+</h3>
+                        <a href="https://drive.google.com/file/d/11N14NCVvEvP5mgkJSLeBq-gw3rx1LUsb/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers core security functions.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">Cisco Cybersecurity</h3>
-                    <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">Cisco Cybersecurity</h3>
+                        <a href="https://drive.google.com/file/d/1WX3tucdEt2AKtDB9t2-ctRhrzIKw0G7U/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers cybersecurity operations and monitoring.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">CCNA</h3>
-                    <a href="https://drive.google.com/file/d/1SydMgXHYGtwe0WXZzNsQiLmfnI9-PzIj/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">CCNA</h3>
+                        <a href="https://drive.google.com/file/d/1SydMgXHYGtwe0WXZzNsQiLmfnI9-PzIj/view?usp=drive_link" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers networking fundamentals.</p>
+                    </div>
                 </div>
                 <div class="certification-card">
-                    <h3 class="certification-title">SQL</h3>
-                    <a href="https://drive.google.com/file/d/19NhyM4dePAXX7x-CeaQ9rrSYSz8XEX6r/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                    <div class="certification-front">
+                        <h3 class="certification-title">SQL</h3>
+                        <a href="https://drive.google.com/file/d/19NhyM4dePAXX7x-CeaQ9rrSYSz8XEX6r/view?usp=sharing" class="certification-link" target="_blank">View Certificate</a>
+                    </div>
+                    <div class="certification-back">
+                        <p style="font-size: 0.85rem;">This certification covers SQL database management.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
         <!-- Skills Section -->
         <section id="skills" class="section">
             <h2 class="section-title">Skills</h2>
@@ -719,7 +762,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Contact Section -->
         <section id="contact" class="section">
             <h2 class="section-title">Get In Touch</h2>
@@ -736,12 +778,10 @@
             </div>
         </section>
     </main>
-
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Sayed Mohamed. All rights reserved.</p>
     </footer>
-
     <!-- JavaScript -->
     <script>
         // Toggle sidebar and overlay
@@ -777,11 +817,9 @@
 
         function updateActiveLink() {
             let currentSection = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.clientHeight;
-
                 if (window.scrollY >= sectionTop) {
                     currentSection = section.getAttribute('id');
                 }
@@ -795,7 +833,16 @@
             });
         }
 
-        window.addEventListener('scroll', updateActiveLink);
+        window.addEventListener('scroll', () => {
+            updateActiveLink();
+            const backToTop = document.getElementById("backToTop");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTop.style.display = "flex";
+            } else {
+                backToTop.style.display = "none";
+            }
+        });
+
         window.addEventListener('resize', updateActiveLink);
 
         // Smooth scrolling for sidebar links
@@ -804,13 +851,17 @@
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-
                 window.scrollTo({
                     top: targetSection.offsetTop - 60,
                     behavior: 'smooth'
                 });
             });
         });
+
+        // Back to Top functionality
+        document.getElementById("backToTop").onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
 
         // Initialize active link on page load
         document.addEventListener('DOMContentLoaded', updateActiveLink);
