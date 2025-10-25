@@ -23,6 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- AOS for animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
         :root {
             --primary-color: #4361ee;
@@ -51,18 +53,15 @@
             overflow-x: hidden;
             position: relative;
         }
-        /* Floating stars for background */
-        .star {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            animation: twinkle 4s infinite;
+        /* Particles.js container */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-        }
-        @keyframes twinkle {
-            0% { opacity: 0.2; }
-            50% { opacity: 1; }
-            100% { opacity: 0.2; }
+            pointer-events: none;
         }
         /* Back to Top Button */
         #backToTop {
@@ -216,16 +215,8 @@
             justify-content: center;
             padding: 2rem;
             text-align: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
         .profile-img-container {
             width: 180px;
@@ -704,22 +695,8 @@
     </style>
 </head>
 <body>
-    <!-- Floating stars -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const body = document.querySelector('body');
-            for (let i = 0; i < 50; i++) {
-                const star = document.createElement('div');
-                star.classList.add('star');
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.width = `${Math.random() * 2 + 1}px`;
-                star.style.height = star.style.width;
-                star.style.animationDelay = `${Math.random() * 4}s`;
-                body.appendChild(star);
-            }
-        });
-    </script>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
     <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
@@ -997,6 +974,24 @@
     </footer>
     <!-- JavaScript -->
     <script>
+        // Initialize Particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#ffffff" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#4361ee", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    events: { onhover: { enable: true, mode: "repulse" } }
+                }
+            });
+        });
+
         // Toggle sidebar and overlay
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
