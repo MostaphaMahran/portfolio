@@ -49,6 +49,20 @@
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+        /* Floating stars for background */
+        .star {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: twinkle 4s infinite;
+            z-index: -1;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
         }
         /* Back to Top Button */
         #backToTop {
@@ -127,7 +141,7 @@
             height: 100vh;
             background-color: var(--light-bg);
             z-index: 1100;
-            transition: var(--transition);
+            transition: left 0.5s ease;
             padding: 4rem 1.5rem 2rem;
             border-right: 1px solid rgba(77, 95, 207, 0.2);
         }
@@ -205,6 +219,13 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .profile-img-container {
             width: 180px;
@@ -221,6 +242,10 @@
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             perspective: 1000px;
         }
+        .profile-img-container:hover {
+            transform: rotate(5deg) translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.3);
+        }
         .profile-img-container::after {
             content: '';
             position: absolute;
@@ -235,10 +260,6 @@
         }
         .profile-img-container:hover::after {
             opacity: 1;
-        }
-        .profile-img-container:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 15px 35px rgba(67, 97, 238, 0.3);
         }
         .profile-img {
             width: 100%;
@@ -298,7 +319,7 @@
             background-color: rgba(77, 95, 207, 0.1);
             color: var(--text-color);
             text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.5s ease, background-color 0.3s ease;
             transform: scale(0.9);
             opacity: 0;
             transform: translateY(20px);
@@ -307,7 +328,7 @@
         .social-link:nth-child(1) { animation-delay: 1.6s; }
         .social-link:nth-child(2) { animation-delay: 1.8s; }
         .social-link:hover {
-            transform: scale(1.2);
+            transform: rotate(360deg) scale(1.2);
             background-color: var(--primary-color);
         }
         /* Sections */
@@ -331,10 +352,14 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
             border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .section-title:hover::after {
+            width: 60px;
         }
         .section-card {
             background-color: var(--light-bg);
@@ -343,11 +368,11 @@
             box-shadow: var(--box-shadow);
             margin-bottom: 1.5rem;
             border: 1px solid rgba(77, 95, 207, 0.2);
-            transition: var(--transition);
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
         }
         .section-card:hover {
-            box-shadow: var(--hover-shadow);
-            transform: translateY(-3px);
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.3);
         }
         /* About Section */
         .about-text {
@@ -370,7 +395,11 @@
             position: relative;
             opacity: 0;
             transform: translateX(-50px);
-            animation: slideInLeft 0.8s ease forwards;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .experience-item.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         .experience-item:nth-child(1) { animation-delay: 0.3s; }
         .experience-item:nth-child(2) { animation-delay: 0.6s; }
@@ -434,8 +463,8 @@
             position: relative;
         }
         .certification-card:hover {
-            transform: rotateY(15deg) scale(1.03);
-            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.2);
+            transform: rotateY(15deg) scale(1.05);
+            box-shadow: 0 15px 30px rgba(67, 97, 238, 0.3);
         }
         .certification-card::before {
             content: '';
@@ -527,11 +556,11 @@
             font-weight: 500;
             transition: var(--transition);
             font-size: 0.9rem;
+            animation: pulse 2s infinite;
         }
         .contact-btn:hover {
             background-color: var(--primary-hover);
             transform: scale(1.05);
-            animation: pulse 1s infinite;
         }
         /* Footer */
         .footer {
@@ -663,6 +692,22 @@
     </style>
 </head>
 <body>
+    <!-- Floating stars -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.querySelector('body');
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 2 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                body.appendChild(star);
+            }
+        });
+    </script>
     <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
@@ -1032,6 +1077,16 @@
                 }
             }, 30);
         });
+        // Animate experience items on scroll
+        const experienceItems = document.querySelectorAll('.experience-item');
+        const experienceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        experienceItems.forEach(item => experienceObserver.observe(item));
         // Initialize AOS for animations
         document.addEventListener('DOMContentLoaded', () => {
             AOS.init({
