@@ -794,8 +794,6 @@
                 hyphens: auto;
                 word-break: break-word;
             }
-            /* إزالة إخفاء Particles.js على الموبيل */
-            /* #particles-js { display: none; } */
         }
     </style>
 </head>
@@ -1091,8 +1089,6 @@
     </footer>
     <!-- Sound Effect -->
     <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3" preload="auto"></audio>
-    <!-- AddThis Script -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-65f4b3e3a3f8d7e4" async="async"></script>
     <!-- JavaScript -->
     <script>
         // Hide loading screen when page is loaded
@@ -1107,7 +1103,7 @@
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: window.innerWidth < 768 ? 30 : 80, // عدد أقل على الموبيل
+                        value: window.innerWidth < 768 ? 30 : 80,
                         density: { enable: true, value_area: 800 }
                     },
                     color: { value: "#ffffff" },
@@ -1306,18 +1302,20 @@
             });
         });
         // Share button functionality
-        document.getElementById('shareBtn').addEventListener('click', () => {
-            if (typeof addthis !== 'undefined') {
-                addthis.layers({
-                    theme: 'transparent',
-                    share: {
-                        position: 'left',
-                        numPreferredServices: 5
-                    }
-                }).refresh();
-                addthis.layers({}).open();
-            } else {
-                console.error("AddThis is not loaded.");
+        document.getElementById('shareBtn').addEventListener('click', async () => {
+            const shareData = {
+                title: 'Sayed Mohamed Sayed | OCI Infrastructure Engineer',
+                text: 'Check out my professional portfolio!',
+                url: window.location.href,
+            };
+            try {
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    alert('Web Share API not supported in your browser. You can copy the link manually: ' + window.location.href);
+                }
+            } catch (err) {
+                console.error('Error sharing:', err);
             }
         });
     </script>
