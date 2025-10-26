@@ -794,9 +794,8 @@
                 hyphens: auto;
                 word-break: break-word;
             }
-            #particles-js {
-                display: none;
-            }
+            /* إزالة إخفاء Particles.js على الموبيل */
+            /* #particles-js { display: none; } */
         }
     </style>
 </head>
@@ -1108,7 +1107,7 @@
             particlesJS('particles-js', {
                 particles: {
                     number: {
-                        value: window.innerWidth < 768 ? 40 : 80,
+                        value: window.innerWidth < 768 ? 30 : 80, // عدد أقل على الموبيل
                         density: { enable: true, value_area: 800 }
                     },
                     color: { value: "#ffffff" },
@@ -1317,6 +1316,8 @@
                     }
                 }).refresh();
                 addthis.layers({}).open();
+            } else {
+                console.error("AddThis is not loaded.");
             }
         });
     </script>
